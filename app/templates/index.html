@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+			{% include 'head.html' %}
+		</head>
+		<body>
+			<header>
+							{% include 'nav.html' %}
+	    </header>
+	    <div class="container-fluid">
+	      <div class="row">
+	        <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
+	          <ul class="nav nav-pills flex-column">
+	            <li class="nav-item">
+	              <a class="nav-link active" href="/index">Overview</a> <span class="sr-only">(current)</span></a>
+	            </li>
+	            <li class="nav-item">
+	              <a class="nav-link" href="/people">All People</a>
+	            </li>
+	            <li class="nav-item">
+	              <a class="nav-link" href="/courses">Courses</a>
+	            </li>
+	            <li class="nav-item">
+	              <a class="nav-link" href="/projectOfficer">Project Officer</a>
+							<li class="nav-item">
+		             <a class="nav-link" href="/supervisor">Supervisor</a>
+	            </li>
+	          </ul>
+	        </nav>
+
+	        <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
+	          <h1>Welcome {{username}}</h1>
+						<h2>Calendar Year 2017 Development Data</h2>
+
+	          <section class="row text-center placeholders">
+
+	            <div class="col-6 col-sm-3 placeholder">
+								<h2>{{instructorLed.mycount | int}}</h2>
+								<h4> Instructor Led Courses Delivered </h4>
+	            </div>
+							<div class="col-6 col-sm-3 placeholder">
+								<h2>{{instructorLedHours.mycount | int}}</h2>
+								<h4> Instructor Led Hours Delivered </h4>
+							</div>
+							<div class="col-6 col-sm-3 placeholder">
+								<h2>{{virtualCoursesDelivered.mycount | int}}</h2>
+								<h4> Virtual Class Courses Delivered </h4>
+							</div>
+							<div class="col-6 col-sm-3 placeholder">
+								<h2>{{virtualClassParticipants.virtcount | int}}</h2>
+								<h4>Virtual Class Participants</h4>
+							</div>
+							<div class="col-6 col-sm-3 placeholder">
+								<h2>{{virtualCourseHours.mycount | int}}</h2>
+								<h4> Virtual Class Hours Delivered </h4>
+							</div>
+	          </section>
+				<section>
+					<div>
+	          <h2>HLI Course Data</h2>
+						<h4>Calendar Year 2017</h4>
+	          <div class="table-responsive">
+	            <table class="table table-striped">
+	              <thead>
+	                <tr>
+	                  <th>Course Category</th>
+	                  <th>Number of Courses</th>
+	                  <th>Number of Attendees</th>
+	                  <th>Credits/Hours</th>
+										<th>Evaluation Average</th>
+	                </tr>
+	              </thead>
+	              <tbody>
+	                <tr>
+	                  <td>LMS Courses</td>
+	                  <td>{{lmsCourses.mycount | int}}</td>
+										<td>{{lmsCoursePersonCount.lmscount | int}}</td>
+										<td>{{lmsCourseHoursCount.mycount | int}}</td>
+										<td>#</td>
+	                </tr>
+	                <tr>
+	                  <td>Project Officer</td>
+										<td>{{poCourseCount.mycount | int}}</td>
+	                  <td>{{poCourseAttendanceCount.mycount | int}}</td>
+	                  <td>{{poCourseHours.mycount |int}}</td>
+										<td>#</td>
+	                </tr>
+	                <tr>
+	                  <td>Leadership</td>
+										<td>#</td>
+	                  <td>#</td>
+	                  <td>#</td>
+										<td>#</td>
+	                </tr>
+	                <tr>
+	                  <td>Facilitation</td>
+	                  <td>#</td>
+	                  <td>#</td>
+	                  <td>#</td>
+	                  <td>#</td>
+	                </tr>
+	              </tbody>
+	            </table>
+	          </div>
+					</section>
+				<section>
+					<br><br>
+					<h2>Government Mandatory and Required Training Administered</h2>
+					<h4>9 Courses that HRSA Employees Need to Complete</h4>
+					<h4>EEO Awareness Training</h4>
+					<h5>Target for Complete Compliance is December 1, 2017</h5>
+							<div class="progress">
+								<div class="progress-bar progress-bar-success" role="progressbar" style="width:95%">2000
+								</div>
+								<div class="progress-bar progress-bar-warning" role="progressbar" style="width:5%">
+									210
+								</div>
+							</div>
+						 <br><br>
+						<h4>FY2017 Cybersecurity Awareness Training</h4>
+						<h5>Target for Complete Compliance is December 15, 2017</h5>
+								<div class="progress">
+									<div class="progress-bar progress-bar-success" role="progressbar" style="width:90%">
+										1800
+									</div>
+									<div class="progress-bar progress-bar-warning" role="progressbar" style="width:10%">
+										 410
+									</div>
+							</div>
+							<br><br>
+				</section>
+	        </main>
+	      </div>
+	    </div>
+
+	    <!-- Bootstrap core JavaScript
+	    ================================================== -->
+	    <!-- Placed at the end of the document so the pages load faster -->
+	    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+	    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+	    <script src="../../../../dist/js/bootstrap.min.js"></script>
+	</body>
+</html>

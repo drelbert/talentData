@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 {% include 'head.html' %}
+</head>
+<body>
+	<header>
+	{% include 'nav.html' %}
+</header>
+	<div class="container-fluid">
+	 <div class="row">
+		 <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
+			 <ul class="nav nav-pills flex-column">
+				 <li class="nav-item">
+					 <a class="nav-link" href="/index">Overview</a>
+				 </li>
+				 <li class="nav-item">
+					 <a class="nav-link active" href="/people">All People</a> <span class="sr-only"(current)</span></a>
+				 </li>
+				 <li class="nav-item">
+					 <a class="nav-link" href="/courses">Courses</a>
+				 </li>
+				 <li class="nav-item">
+					 <a class="nav-link" href="/projectOfficer">Project Officer</a>
+				 </li>
+			 </ul>
+		 </nav>
+	<main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
+		<h1>{{ person.firstName }}
+				{{ person.lastName }}
+		</h1>
+		<h2>Bureau:
+			  {{ person.bo }}
+		</h2>
+		<h2>Courses Completed
+		</h2>
+			<ul>
+				{% for rownum, row in personCompleted.iterrows() %}
+	 			<li><a href="/courses/{{row.courseId}}">
+					<!-- /people/{{hhs_id}}  /{{row.offeringId}}-->
+					{{row.courseTitle}}
+				</a></li>
+				{% endfor %}
+			  </ul>
+	     </main>
+      </div>
+     </div>
+    </body>
+</html>

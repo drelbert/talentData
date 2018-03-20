@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+			{% include 'head.html' %}
+		</head>
+		<body>
+			<header>
+							{% include 'nav.html' %}
+	    </header>
+      <div class="container-fluid">
+        <div class="row">
+          <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
+            <ul class="nav nav-pills flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="/index">Overview</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/people">All People</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/courses">Courses</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/projectOfficer">Project Officer</a><span class="sr-only">(current)</span></a>
+              </li>
+							<li class="nav-item">
+								 <a class="nav-link" href="/supervisor">Supervisor</a>
+							</li>
+            </ul>
+          </nav>
+
+          <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
+           <h1>Project Officer Big Data</a></h1>
+           <h2>Current Count of HRSA Project Officers: {{projectOfficerCount.mycount | int}}</h2>
+					 <h3>Click on the Bureau to see current Project Officers</h3>
+					 <h4>
+					 {% for rownum, row in boList.iterrows() %}
+					 <li><a href="/boProjectOfficers/{{row.bo}}">
+						{{row.bo}}</a></li>
+						{% endfor %}
+					</h4>
+
+					 <br><br>
+           <h2>Base Year Certification Count</h2>
+               <div class="progress">
+                 <div class="progress-bar progress-bar-success" role="progressbar" style="width:70%">
+                   {{projectOfficerCount.mycount | int}}
+                 </div>
+                 <div class="progress-bar progress-bar-warning" role="progressbar" style="width:30%">
+                   5 In Progress
+                 </div>
+               </div>
+              <br><br>
+             <h2>Recertification status</h2>
+                 <div class="progress">
+                   <div class="progress-bar progress-bar-success" role="progressbar" style="width:50%">
+                     130 Certified
+                   </div>
+                   <div class="progress-bar progress-bar-warning" role="progressbar" style="width:30%">
+                     70 In Progress
+                   </div>
+                   <div class="progress-bar progress-bar-danger" role="progressbar" style="width:20%">
+                     30 Past Due
+                   </div>
+               </div>
+               <br><br>
+           <h2>Current CEU Count: 45</h2>
+           <div id="accordion">
+               <div class="card">
+                 <div class="card-header" id="headingOne">
+                   <h5 class="mb-0">
+                     <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                       Courses for Project Officers
+                     </button>
+                   </h5>
+                 </div>
+
+                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                   <div class="card-body">
+                     Add query and jinja code to list PO courses here.
+
+                   </div>
+                 </div>
+               </div>
+               <div class="card">
+                 <div class="card-header" id="headingTwo">
+                   <h5 class="mb-0">
+                     <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                       Project Officers by organization
+                     </button>
+                   </h5>
+                 </div>
+                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                   <div class="card-body">
+                     Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                   </div>
+                 </div>
+               </div>
+               <div class="card">
+                 <div class="card-header" id="headingThree">
+                   <h5 class="mb-0">
+                     <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                       Placeholder
+                     </button>
+                   </h5>
+                 </div>
+                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                   <div class="card-body">
+                     Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                   </div>
+                 </div>
+               </div>
+             </div>
+           <section class="row text-center placeholders">
+        </div>
+      </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+   </body>
+  </html>

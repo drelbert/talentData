@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 {% include 'head.html' %}
+</head>
+<body>
+	<header>
+	{% include 'nav.html' %}
+</header>
+	<div class="container-fluid">
+	 <div class="row">
+		 <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
+			 <ul class="nav nav-pills flex-column">
+				 <li class="nav-item">
+					 <a class="nav-link" href="/index">Overview</a>
+				 </li>
+				 <li class="nav-item">
+					 <a class="nav-link" href="/people">All People</a> <span class="sr-only"(current)</span></a>
+				 </li>
+				 <li class="nav-item">
+					 <a class="nav-link" href="/courses">Courses</a>
+				 </li>
+				 <li class="nav-item">
+					 <a class="nav-link active" href="/projectOfficer">Project Officer</a>
+				 </li>
+			 </ul>
+		 </nav>
+	<main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
+		<h1>{{ boProjectOfficers.bo[0] }}</h1>
+			<ul>
+				{% for rownum, row in boProjectOfficers.iterrows() %}
+       <li><a href="/people/{{row.hhsId}}">{{ row.firstName }} {{ row.lastName }}</a></li>
+     {% endfor %}
+		 {# recommended way to write the link
+		 <li><a href="{{ url_for('people',hhs_id=row.hhsId) }}">{{ row.firstName }} {{ row.lastName }}</a></li> #}
+     </ul>
+	     </main>
+      </div>
+     </div>
+    </body>
+</html>
